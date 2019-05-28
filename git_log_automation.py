@@ -38,3 +38,19 @@ print("Current working directory is:", cwd)
 ==============================================
 os.chdir(os.path.dirname(sys.argv[0]))
 ==============================================
+# cronr job format
+* * * * * /home/udi/foo/bar.py
+==============================================
+#This will change your current working directory to so that opening relative paths will work:
+
+import os
+os.chdir("/home/udi/foo")
+#However, you asked how to change into whatever directory your Python script is located, even if you don't know what directory that will be when you're writing your script. To do this, you can use the os.path functions:
+
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+#This takes the filename of your script, converts it to an absolute path, then extracts the directory of that path, then changes into that directory.
+=================================================
