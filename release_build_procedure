@@ -1,0 +1,12 @@
+release_3.9.0_CE release process:-
+
+all dependencies:
+server_3.8.0-CI
+mobilegateway_3.8.0-CI
+HTML5cc_3.8.0-CI
+customerconfig_3.8.0-CI
+ondotpackage_3.8.0-CI
+
+1) first check for any upstream or downstream projects.
+2) disable the downstream projects when the parent job is building.
+3)  
